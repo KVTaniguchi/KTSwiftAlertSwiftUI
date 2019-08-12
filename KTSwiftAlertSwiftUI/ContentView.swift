@@ -21,15 +21,32 @@ struct ContentView: View {
                     })
         }
         
-        
     }
     
     /// buttons that launch different views
+    
+}
+
+struct ButtonsContainer: View {
+    var body: some View {
+        VStack(spacing: 15) {
+            Button(action: {
+                print("Single Alert tapped")
+            }) {
+               Text("Single Alert")
+            }
+            Button(action: {
+                print("Alert with image pressed")
+            }) {
+               Text("Alert with image")
+            }
+        }
+    }
 }
 
 struct MainNavView: View {
     var body: some View {
-        EmptyView()
+        ButtonsContainer()
     }
 }
 
