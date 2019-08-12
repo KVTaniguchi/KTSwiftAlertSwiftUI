@@ -10,7 +10,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            MainNavView()
+                .navigationBarTitle(Text("KTSwift Alert"))
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        print("Help tapped!")
+                    }) {
+                        Text("Help")
+                    })
+        }
+        
+        
+    }
+    
+    /// buttons that launch different views
+}
+
+struct MainNavView: View {
+    var body: some View {
+        EmptyView()
     }
 }
 

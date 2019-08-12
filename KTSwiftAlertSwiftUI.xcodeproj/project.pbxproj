@@ -13,6 +13,7 @@
 		BD07040A2301030E0089AA3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0704092301030E0089AA3F /* Assets.xcassets */; };
 		BD07040D2301030E0089AA3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD07040C2301030E0089AA3F /* Preview Assets.xcassets */; };
 		BD0704102301030E0089AA3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD07040E2301030E0089AA3F /* LaunchScreen.storyboard */; };
+		BD070418230104890089AA3F /* ExampleNavigationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD070417230104890089AA3F /* ExampleNavigationControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BD07040C2301030E0089AA3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD07040F2301030E0089AA3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD0704112301030E0089AA3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD070417230104890089AA3F /* ExampleNavigationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleNavigationControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BD07040E2301030E0089AA3F /* LaunchScreen.storyboard */,
 				BD0704112301030E0089AA3F /* Info.plist */,
 				BD07040B2301030E0089AA3F /* Preview Content */,
+				BD070417230104890089AA3F /* ExampleNavigationControl.swift */,
 			);
 			path = KTSwiftAlertSwiftUI;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD070418230104890089AA3F /* ExampleNavigationControl.swift in Sources */,
 				BD0704042301030C0089AA3F /* AppDelegate.swift in Sources */,
 				BD0704062301030C0089AA3F /* SceneDelegate.swift in Sources */,
 				BD0704082301030C0089AA3F /* ContentView.swift in Sources */,
