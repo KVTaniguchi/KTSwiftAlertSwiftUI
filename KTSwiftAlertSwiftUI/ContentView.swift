@@ -20,33 +20,50 @@ struct ContentView: View {
                         Text("Help")
                     })
         }
-        
     }
-    
-    /// buttons that launch different views
-    
 }
 
 struct ButtonsContainer: View {
+    @Binding var isOn: Bool
     var body: some View {
         VStack(spacing: 15) {
-            Button(action: {
-                print("Single Alert tapped")
-            }) {
-               Text("Single Alert")
+            HStack(spacing: 15) {
+                Button(action: {
+                    self.isOn = true
+                    print("Single Alert tapped")
+                }) {
+                   Text("Single Alert")
+                }
+                Button(action: {
+                    self.isOn = true
+                    print("Alert with image pressed")
+                }) {
+                   Text("Alert with image")
+                }
             }
-            Button(action: {
-                print("Alert with image pressed")
-            }) {
-               Text("Alert with image")
+            HStack(spacing: 15) {
+                Button(action: {
+                    self.isOn = true
+                    print("Double Alert tapped")
+                }) {
+                   Text("Double Alert")
+                }
+                Button(action: {
+                    self.isOn = true
+                }) {
+                   Text("Alert with TextField")
+                }.alert(isPresented: $isOn) { () -> Alert in
+                    Alert(title: Text("Important message"), message: Text("wear this"), dismissButton: .default(Text("Got it!")))
+                }
             }
         }
     }
 }
 
 struct MainNavView: View {
+    @State private var showAlert: Bool = false
     var body: some View {
-        ButtonsContainer()
+        ButtonsContainer(isOn: $showAlert)
     }
 }
 
