@@ -8,23 +8,37 @@
 
 import SwiftUI
 
+struct MainNavView: View {
+    @State private var showAlert: Bool = false
+    var shouldShowAlerts: Bool = false
+    var body: some View {
+        ButtonsContainer(isOn: $showAlert)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            MainNavView()
-                .navigationBarTitle(Text("KTSwift Alert"))
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        print("Help tapped!")
-                    }) {
-                        Text("Help")
-                    })
+        let mainNav = MainNavView().navigationBarTitle(Text("KTSwift Alert"))
+                                    .navigationBarItems(trailing:
+                                        Button(action: {
+                                            print("Help tapped!")
+                                            
+                                        }) {
+                                            Text("Help")
+                                    })
+        return NavigationView {
+            return mainNav
         }
     }
 }
 
 struct ButtonsContainer: View {
     @Binding var isOn: Bool
+    
+    init(isOn: Binding<Bool>) {
+        self._isOn = isOn
+    }
+    
     var body: some View {
         VStack(spacing: 15) {
             HStack(spacing: 15) {
@@ -49,28 +63,21 @@ struct ButtonsContainer: View {
                    Text("Double Alert")
                 }
                 Button(action: {
-                    self.isOn = true
+                    self.isOn = false
                 }) {
                    Text("Alert with TextField")
-                }.alert(isPresented: $isOn) { () -> Alert in
-                    Alert(title: Text("Important message"), message: Text("wear this"), dismissButton: .default(Text("Got it!")))
                 }
             }
+        }.alert(isPresented: $isOn) { () -> Alert in
+            Alert(title: Text("Important message 1111"), message: Text("wear this"), dismissButton: .default(Text("Got it!")))
         }
     }
 }
 
-struct MainNavView: View {
-    @State private var showAlert: Bool = false
-    var body: some View {
-        ButtonsContainer(isOn: $showAlert)
-    }
-}
-
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif
+//#if DEBUG
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+//#endif
